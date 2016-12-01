@@ -1,0 +1,759 @@
+
+<!-- saved from url=(0052)http://www.stat.ucla.edu/~akfletcher/brainsbits.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+ <title> NIPS 2016 Workshop:  Brains and Bits: Neuroscience Meets Machine Learning
+</title>
+
+  <style type="text/css">
+
+
+/* ==== TEXT COLORS ==== */
+.WikiLogoTable, .WikiLogo, .WikiLogoName a, .WikiHeaderNav, .WikiHeaderNav a, .WikiFooterNav, .WikiFooterNav a, .WikiLicense { color: #000024; }
+#pageInformation, .WikiPageMenuTitle, .WikiPageMenuEntries a, a.WikiPageMenuEditButton, a.WikiPageMenuEditButtonDisabled { color: #000; }
+span.WikiPageMenuEditButtonDisabled, span.WikiPageMenuEditButtonLocked, span.WikiPageMenuEditButtonNoPermission { color: #888; }
+#sidebar a { color: #660000; }
+#sidebar span a { color: inherit; }
+/* ==== BACKGROUND COLORS AND IMAGES ==== */
+/*body { background-color: #525252; } body { background-color: #202020; }*/
+body { background-color: #000a7a; }
+#outerWrapper { background-image: url('http://www.wikispaces.com/_/77j5z439/i/box-shadow.png'); background-position: top left; background-repeat: repeat-y; }
+#wrapper { background: #fafafa; }
+/*Allie commented to get rid of black  #header { background-color: #2a2828; background-position: top left; background-repeat: repeat; } ===*/
+#pageInformation { background-image:url('http://www.wikispaces.com/_/q0v4vx7v/i/white-overlay.png'); background-position: top left; background-repeat: repeat-x; }
+/*Allie commented to get rid of black
+#footer { background-color: #2a2828; background-position: top left; background-repeat: repeat; } ==*/
+li.WikiPageMenuEntryOn, a.WikiPageMenuEditButton, a.WikiPageMenuEditButtonDisabled { background-image: url('http://www.wikispaces.com/_/z420k58q/i/white-solid-overlay.png'); background-position: top left; background-repeat: repeat-x; }
+/*<br>
+  <img src="http://www.soe.ucsc.edu/~afletcher/Images/neurons.jpg" alt="" style="height: 120px;  " />
+<br/> */
+/* ==== GENERAL STYLES ==== */
+body { font-family: Arial, Helvetica, sans-serif !important; font-size: 13px; margin: 0; padding: 0; }
+#header img, #sidebar img, #footer img { border: 0; }
+#header ul, #header ol, #sidebar ul, #sidebar ol, #footer ul, #footer ol { margin: 0; padding: 0; }
+#outerWrapper { margin: 0 auto; padding-left: 10px; width: 960px; }
+#wrapper { margin: 0 auto; padding: 1px; width: 960px; }
+#header, #bd, #footer { width: 100%; }
+#content_view { width: 99%; }
+
+/* ==== HEADER ==== */
+#header { float: left; overflow: visible; min-height: 199px; }
+#header a { text-decoration: none; }
+#header a:hover { text-decoration: underline; }
+.WikiLogoTable, .WikiLogo { float: right; }
+.WikiLogoTable { padding: 30px 0 0 22px; }
+.WikiLogoName a { font-size: 1.9em; }
+#headerInner { float: right; min-height: 89px; line-height: 1; width: 100%; position: relative; }
+.WikiHeaderNav { float: right; padding: 1em 1em 0 0; position: absolute }
+.WikiHeaderNav, x:-moz-any-link { padding-right: 10px; } /* FireFox 2 */
+.WikiHeaderNav, x:-moz-any-link, x:default { padding-right: 1em; } /* Reset FireFox 3 */
+.WikiHeaderNav a { display: inline; font-size: 1em; line-height: 18px; padding: 0 3px 0 3px; }
+#pageInformation { border-top: 1px solid #ddd; display:inline; float: left; padding-left: 207px; width: 733px; min-height: 40px; }
+
+/* ==== FOOTER ==== */
+#footer { clear:both; text-align: center; }
+#footer a { text-decoration: none; }
+#footer a:hover { text-decoration: underline; }
+.WikiFooterNav { padding-top: 20px; }
+.WikiFooterNav a { font-size: 1em; padding: 0 8px 0 8px; }
+.WikiLicense { padding: 5px 0 20px; }
+.WikiLicense img { vertical-align: text-bottom; }
+
+/* ==== NOTIFICATIONS and BANNERS ==== */
+.WikiSuccess { background-color: #DDF6DD; background-image: url(http://www.wikispaces.com/_/1v8qv98z/i/icon/rv/ok_16.png); }
+.WikiWarning { background-color: #FAFADD; background-image: url(http://www.wikispaces.com/_/1v8qv98z/i/icon/rv/warnings_16.png); }
+.WikiError { background-color: #FADDDD; background-image: url(http://www.wikispaces.com/_/1v8qv98z/i/icon/rv/close_a_16.png); }
+.WikiInfo { background-color: #f5c300; background-image: url(http://www.wikispaces.com/_/1v8qv98z/i/icon/rv/info_16.png); }
+.WikiBanner { background-color: #FAFADD; background-image: url(http://www.wikispaces.com/_/1v8qv98z/i/icon/rv/info_16.png); }
+.WikiNotice, .WikiBanner { background-position: 10px 50%; background-repeat: no-repeat; float: right; padding: 0 0 0 35px; width: 705px; }
+.WikiNotice ul, .WikiBanner ul { color: #000; list-style-type: none; margin: 10px 0 8px; padding: 0 10px; }
+.WikiNotice a, .WikiBanner a { color: blue !important; }
+
+/* ==== CONTENT ==== */
+#wikiBody{ clear: both; }
+.wikiBox { background-color: #FFFFFF; color: #000000; float: right; padding: 10px; width: 730px; }
+#content_view.wiki { overflow-x: auto; }
+.WikispacesContent { max-width: 700px; }
+#SpaceNavigationTool { line-height: 1; }
+.WikiPageMenuStar { border: none; float: left; padding-top: 10px; padding-right: 3px; }
+.WikiPageMenuStarNo, .WikiPageMenuStarYes { border: none; }
+.WikiPageMenuPermissionIcon { float: left; padding: 13px 8px 0 0; }
+.WikiPageMenuTitle { float: left; font-size: 1.7em; font-family: Georgia, Times New Roman, Times, serif; line-height: 40px; max-width: 515px; padding-right: 1em; white-space: nowrap; }
+
+/* ==== TABS and EDIT ==== */
+.WikiPageMenuEntries img { border: 0; }
+.WikiPageMenuEntries a, .WikiPageMenuEditButton { text-decoration: none; }
+.WikiPageMenuEntryOff a:hover { text-decoration: underline; }
+.WikiPageMenuEntryOn a:hover { cursor: default; }
+.WikiPageMenuEntries ul, .WikiPageMenuEntries li { display: inline; float: left; height: 40px; }
+.WikiPageMenuEntries ul { list-style: none; }
+.WikiPageMenuEntries li { text-transform: uppercase; }
+.WikiPageMenuEntries a { display: block; float: left; font-weight: bold; text-align: center; height: 20px; padding: 13px 12px 7px 12px; }
+li.WikiPageMenuEntryOn, a.WikiPageMenuEditButton, a.WikiPageMenuEditButtonDisabled { border-right: 1px solid #ddd; }
+a.WikiPageMenuEditButton, a.WikiPageMenuEditButtonDisabled { float: left; font-weight: bold; text-transform: uppercase; padding: 13px 16px 7px 16px; height: 20px;  text-align:center; }
+span.WikiPageMenuEditButtonDisabled, span.WikiPageMenuEditButtonLocked, span.WikiPageMenuEditButtonNoPermission { background-image: url('http://www.wikispaces.com/_/z420k58q/i/white-solid-overlay.png'); background-position: top left; background-repeat: repeat-x; border-right: 1px solid #ddd; float: left; font-weight: bold; text-transform: uppercase; padding: 13px 16px 7px 16px; height: 20px;  text-align:center; }
+span.WikiPageMenuEditButtonLocked span, span.WikiPageMenuEditButtonNoPermission span { background-image:url('http://www.wikispaces.com/_/xv200kxz/i/icon_16_lock.gif'); background-position: bottom left; background-repeat: no-repeat; padding-left: 26px; padding-top: 1px;}
+
+/* ==== ACTIONS ==== */
+#sidebar { display: inline; float: left; width: 200px; }
+#sidebar a { text-decoration: none; color: #202020}
+#sidebar a:hover { text-decoration: underline; }
+#actions { padding: 13px; }
+form.WikiSearch { margin-bottom: 1em; }
+input.WikiSearchInput { font-family: Arial, Helvetica, sans-serif; font-size: 1em; }
+.WikiActions { list-style-type:none; }
+.WikiCustomNav { padding: 0;	width: auto; }
+.WikiCustomNav ol { padding-left: 1.5em !important; }
+.WikiCustomNav ul { padding-left: 1em !important; }
+ol.includePageList { padding-left: 0 !important; }
+.WikiActions li { padding-bottom: 6px; white-space: nowrap; }
+.WikiActions a { font-family: Arial, Helvetica, sans-serif; font-size: 13px; }
+.WikiActions a:hover, .WikiCustomNav a:hover { text-decoration: underline; }
+.WikiActions img { padding-right: 0.5em; }
+.editNavigation { font-size: 0.9em; padding-top: 5px; text-align: center; }
+
+/* ==== SUBMENU ==== */
+#WikiPageSubMenuControl { display:inline; padding-left:5px; border: 0; height: 13px; }
+.WikiPageSubMenuDisabled { display: none; }
+.WikiPageSubMenuEnabled { display: inline !important; }
+#WikiPageSubMenu { cursor: pointer;}
+#WikiPageSubMenu ul { z-index: 2; position: absolute; top: 40px; left: 0; list-style: none; width: 150px; background-color: #FFF; padding: 0; margin: 0; border-color: #DDD; border-style: solid; border-width: 1px 1px 0 1px; height: auto; }
+li.WikiPageSubMenuEntry, li.WikiPageSubMenuEntryDisabled { width: 128px; background-image: none; padding: 4px 4px 4px 8px; border-bottom: 1px solid #DDD; margin: 0; float: left; height: auto; background-color: #FFF; height: auto; text-transform: none; }
+.WikiPageSubMenuEntry a { color: #000; font-weight: normal; background-image: none; padding: 0; border: 0; height: auto; }
+.WikiPageSubMenuEntryDisabled { color: #CCC; }
+.WikiPageSubMenuEntry:hover { background-color: #EEE; }
+.WikiPageSubMenuEntryDisabled:hover { background-color: #FFF; }
+#WikiPageSubMenuControl { padding-left: 5px; display: inline; }
+.WikiPageMenuEntries li { position: relative; }
+
+</style>
+
+<!--[if IE 7]>
+<style type="text/css">
+form.WikiSearch { margin: 0; padding: 0; }
+</style>
+<![endif]-->
+
+<!--[if lte IE 6]>
+<style type="text/css">
+#pageInformation { height: 40px; }
+#header, #footer, #outerWrapper, #pageInformation { behavior: url(/s/iepngfix1.htc?nofastload); }
+li.WikiPageMenuEntryOn, a.WikiPageMenuEditButton { background-image: none; background-color: #FFF; }
+#header { height: 150px; }
+#headerInner { height: 109px; }
+#wrapper .wiki { display: inline; }
+.wikiBox { display: inline; }
+#sidebar { display: inline; }
+#actions { padding: 13px; }
+.WikiPageMenuTitle { display: inline; }
+.WikiPageMenuEntries, .WikiPageMenuEntries ul { display: inline; margin-left: 0; padding-left: 0; }
+.WikiPageMenuEntries ul, .WikiPageMenuEntries li, .WikiPageMenuEntries a { display: inline; background-image: none; }
+li.includePageListHomePage, li.includePageListHomePage a { margin-left: 0; padding-left: 0; }
+.WikiNotice, .WikiBanner  { border-bottom: 1px solid #fafafa; }
+.WikiActions { margin-bottom: 0; padding-bottom: 0; }
+.WikiSearch { margin-top: 0; padding-top: 0; }
+</style>
+<![endif]-->
+
+<link rel="stylesheet" href="./NIPS 2016 Workshop_ Brains and Bits_ Neuroscience Meets Machine Learning_files/217420326D.gz.css" type="text/css">
+<link rel="stylesheet" href="./NIPS 2016 Workshop_ Brains and Bits_ Neuroscience Meets Machine Learning_files/45x2kj51-internal.css" type="text/css">
+<link rel="stylesheet" href="./NIPS 2016 Workshop_ Brains and Bits_ Neuroscience Meets Machine Learning_files/1881z69j-internal-bootstrap.css" type="text/css">
+<link rel="stylesheet" href="./NIPS 2016 Workshop_ Brains and Bits_ Neuroscience Meets Machine Learning_files/80q5k59q-internal-bootstrap-responsive.css" type="text/css">
+
+<!--[if lte IE 8]>
+<style type="text/css">
+.WikiInternalHeaderNav {
+  margin: -3px;
+  zoom: 1;
+  filter:
+    progid:DXImageTransform.Microsoft.Shadow(Color=#999999, Strength=3, Direction=180),
+    progid:DXImageTransform.Microsoft.Shadow(Color=#999999, Strength=3, Direction=270);
+}
+</style>
+<![endif]-->
+<script src="./NIPS 2016 Workshop_ Brains and Bits_ Neuroscience Meets Machine Learning_files/qz76z975-common.min.js.download" type="text/javascript"></script>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+
+  var wsGoogleAccount = 'UA-80504-1';
+  _gaq.push(['_setAccount', wsGoogleAccount]);
+  _gaq.push(['_gat._anonymizeIp']);
+  _gaq.push(['_setDomainName', 'wikispaces.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  _gaq.push(['_setCustomVar', 2, 'Authenticated', 'Guest', 2]);
+</script> </head>
+<body>
+
+<div id="wrapper">
+
+<div id="header">
+  <div id="headerInner">
+	<img src="./NIPS 2016 Workshop_ Brains and Bits_ Neuroscience Meets Machine Learning_files/barcelona3.jpg" alt="" style=" height: 199px; left: -1px; position: absolute; top: -1px; width: 962px; ">
+</div>
+
+  <div id="pageInformation">
+                <!--$WikiPageMenuEntries$-->
+  </div>
+</div> <!--end header -->
+<div id="wikiBody">
+  <div id="sidebar">
+    <div id="actions">
+      <div class="WikiCustomNav WikiElement wiki">
+	<!--        <h3><span style="font-size: 120%;"><strong> <u><a class="wiki_link" href="#Schedule">Schedule</a></u></strong></span></h3> -->
+ <!--       <h3><span style="font-size: 17px;"><strong><u><a class="wiki_link" href="#Organizers">Organizers</a></u></strong></span></h3>
+
+<h3 id="toc1"><a name="Organizers-left"></a>
+<span style="color: #333333; font-size: 17px"></span></h3>
+<div>
+
+  <span style="color: #333333; font-size:17px%;">
+<span style="color: #333333; font-size: 110%;padding-left:13px">
+<u><a href="http://users.soe.ucsc.edu/~afletcher/">Allie Fletcher</a></u>
+</span><br>
+<span style="color: #333333; font-size: 110%;padding-left:13px">
+<u><a href="http://www.mackelab.org/">Jakob Macke</a></u></span><br>
+<span style="color: #333333; font-size: 110%;padding-left:13px">
+<u><a href="http://www.seas.harvard.edu/directory/rpa">Eva Dyer</a></u></span><br>
+<span style="color: #333333; font-size: 110%;padding-left:13px">
+<u><a href="http://www.sohldickstein.com/">Jascha Sohl-Dickstein</a></u></span><br>
+</span></div> -->
+ <!--  <h3><span style="font-size: 17px;"><strong><a class="wiki_link" href="/Venue">Venue</a></strong></span></h3>
+ <h3><span style="font-size: 17px;"><strong><a class="wiki_link" href="/memories">Memories</a></strong></span></h3> -->
+
+        <h3><span style="font-size: 120%"><strong><a class="wiki_link" href="http://www.stat.ucla.edu/~akfletcher/brainsbits.html#Speakers">Speakers</a></strong></span></h3>
+
+<h3 id="toc1"><a name="Speakers-left"></a><!-- ws:end:WikiTextHeadingRule:2 --><span style="color: #333333; font-size: 17px;"></span></h3>
+<h3 id="toc1"><a name="Speakers-left"></a><!-- ws:end:WikiTextHeadingRule:2 --><span style="color: #333333; font-size: 17px;"></span></h3>
+
+
+<span style="color: #333333; font-size: 110%;padding-left:13px">
+<a href="http://newport.eecs.uci.edu/anandkumar/">Anima Anandkumar</a></span><br>
+
+<span style="color: #333333; font-size: 110%;padding-left:13px">
+<a href="http://www.iro.umontreal.ca/~bengioy/yoshua_en/index.html">Yoshua Bengio</a></span><br>
+
+<span style="color: #333333; font-size: 110%;padding-left:13px">
+<a href="https://www.alleninstitute.org/what-we-do/brain-science/about/team/staff-profiles/michael-buice/">Michael Buice</a></span><br>
+
+<span style="color: #333333; font-size: 110%;padding-left:13px">
+<a href="http://www.coxlab.org/">David Cox</a></span><br>
+
+<span style="color: #333333; font-size: 110%;padding-left:13px">
+<a href="https://www.simonsfoundation.org/simons-center-for-data-analysis/scda-neuroscience-group/">Mitya Chklovskii</a></span><br>
+
+<span style="color: #333333; font-size: 110%;padding-left:13px">
+<a href="http://iec-lnc.ens.fr/group-for-neural-theory/members/faculty-in-alphabetical-order/deneve-sophie/">Sophie Deneve</a></span><br>
+
+<span style="color: #333333; font-size: 110%;padding-left:13px">
+<a href="https://www.stat.washington.edu/~ebfox/">Emily Fox</a></span><br>
+
+<span style="color: #333333; font-size: 110%;padding-left:13px">
+<a href="https://web.stanford.edu/dept/app-physics/cgi-bin/person/surya-gangulijanuary-2012/">Surya Ganguli</a></span><br>
+
+<span style="color: #333333; font-size: 110%;padding-left:13px">
+<a href="http://demishassabis.com/">Demis Hassabis</a></span><br>
+
+<span style="color: #333333; font-size: 110%;padding-left:13px">
+<a href="https://hciweb.iwr.uni-heidelberg.de/people/fhamprec">Fred Hamprecht</a></span><br>
+
+<span style="color: #333333; font-size: 110%;padding-left:13px">
+<a href="https://www.alleninstitute.org/what-we-do/brain-science/about/team/staff-profiles/stefan-mihalas/">Stefan Mihalas</a></span><br>
+
+<span style="color: #333333; font-size: 110%;padding-left:13px">
+<a href="https://people.eecs.berkeley.edu/~christos/">Christos Papadimitriou</a></span><br>
+
+<span style="color: #333333; font-size: 110%;padding-left:13px">
+<a href="http://pillowlab.princeton.edu/">Jonathan Pillow</a></span><br>
+
+
+
+<span style="color: #333333; font-size: 110%;padding-left:13px">
+<a href="http://pub.ist.ac.at/~csavin/">Christina Savin</a></span><br>
+
+<span style="color: #333333; font-size: 110%;padding-left:13px">
+<a href="http://www.salk.edu/scientist/terrence-sejnowski/">Terry Sejnowski</a></span><br>
+
+<span style="color: #333333; font-size: 110%;padding-left:13px">
+<a href="https://www.janelia.org/people/srini-turaga/">Srini Turaga</a></span><br>
+
+<span style="color: #333333; font-size: 110%;padding-left:13px">
+<a href="https://www.ics.uci.edu/~welling/">Max Welling</a></span><br>
+
+</div>
+
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+<br>
+<!-- <img src="images/neurons.jpg" alt="" style="height: 116px;  " /> -->
+ <!--<img src="./NIPS_files/Axes.jpg" alt="" style="height: 128px  ">
+<br>
+ </div>
+ <br>
+ <br>
+<br>
+<br>
+<br> commented out by Rob -->
+
+<br>
+<br>
+<!-- <img src="./NIPS_files/brainFormula_crop.jpg" alt="" style="height: 160px">-->
+<br>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<img src="./NIPS 2016 Workshop_ Brains and Bits_ Neuroscience Meets Machine Learning_files/Axes.jpg" alt="" style="height: 130px; width: 160px;">
+
+<br>
+<br>
+<!-- <img src=" http://www.soe.ucsc.edu/~afletcher/Images/graphicalMod.jpg" alt=""
+  style="left: 750px; position: absolute; top: 1150px; width: 200px; " />  -->
+
+
+      </div>
+  </div>
+
+  <div class="wikiBox">
+    <div class="contentBox"><div class="innerContentBox">
+<div class="MenuBar WikiControls">
+
+      <div>
+    <div class="ButtonPosition">
+      <div class="Buttons">
+
+    </div>
+    <div class="MoreMenu">
+  <table>
+    <tbody>
+                <tr><td style="white-space: normal;">
+              </td></tr>
+          </tbody>
+  </table>
+</div>  </div>
+  </div>
+
+
+  <textarea id="autosaveContent" style="display:none;" rows="1" cols="1"></textarea>
+  <div id="autosavePrompt" style="display:none;"></div>
+
+<div class="commentContainer">
+  <div class="commentSubject">
+  <div class="wiki wikiPage" id="content_view">
+<hr style="height:1px; visibility:hidden;">
+<!--
+<span style="color: #333333; font-size: 17px; font-weight: normal; "><u><a href="https://nips.cc/" style="text-decoration:none;color:inherit">NIPS 2016</a></u> Barcelona, Spain</span><br> -->
+<hr style="height:1px; visibility:hidden;">
+<span style="color: #000078; font-size: 22px; font-weight: bold; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 1px;"><strong>Brains and Bits: Neuroscience Meets Machine Learning</strong></span><br>
+<span style="color: #000078; font-size: 18px; font-weight: bold; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 1px;"><strong> 9 &amp; 10 December 2016,  Barcelona, Spain </strong></span> <br>
+<span style="color: #333333; font-size: 110%;"><a href="http://www.stat.ucla.edu/~akfletcher/brainsbits_overview.html">Workshop Overview</a> (link to proposal and summary)</span><br><br>
+
+<style type="text/css">
+.schedTable { background-color:#F0F8FF; border-collapse:collapse; }
+.schedTable th { background-color:#00BFFF; padding:5px;border:1px solid #000; }
+.schedTable td, .myTable th { padding:5px;border:1px solid #000; }
+</style>
+
+<span style="color: #333333;"><h2>Workshop Schedule and Posters</h2></span>
+
+<table class="schedTable">
+<tbody><tr>
+<th>Time</th>
+<th> Day 1 </th>
+</tr>
+<tr>
+	<td width="8%">8:15</td>
+	<td width="92%">Opening remarks and welcome</td>
+</tr>
+
+<tr>
+	<td>8:30</td>
+	<td>Surya Ganguli  
+	<em>Towards a theory of high dimensional, single trial neural data analysis: On the role of random projections and phase transitions</em></td>
+</tr>
+
+<tr>
+	<td>9:00</td> <td>Katherine Heller   
+<em>Translating between human and animal studies via Bayesian multi-task learning
+</em></td>
+</tr>
+
+<tr>
+	<td>9:30</td>
+	<td>Dmitri (Mitya) Chklovskii  
+	<em>Similarity matching: A new theory of neural computation</em></td>
+</tr>
+
+<tr>
+	<td>10:00</td>
+	<td>Coffee break 1</td>
+</tr>
+
+<tr>
+	<td>10:30</td>
+	<td>Poster Session 1</td>
+</tr>
+<tr>
+	<td>11:00</td>
+	<td>Matthias Bethge  
+	<em>Let's compete—benchmarking models in neuroscience</em></td>
+</tr>
+
+<tr>
+	<td>11:30</td>
+	<td>Yoshua Bengio  
+	<em>Small Steps Towards Biologically Plausible Deep Learning</em></td>
+</tr>
+
+<tr>
+	<td>12:00</td>
+	<td>Lunch</td>
+</tr>
+
+<tr>
+	<td>2:30 PM</td>
+	<td>Pulkit Agrawal
+<!--, Mark D. Lescroart, Dustin E. Stansbury, Jitendra Malik, & Jack L. Gallant &emsp;a-->
+	<em>The Human Visual Hierarchy is Isomorphic to the Hierarchy learned by a Deep Convolutional Neural Network Trained for Object Recognition</em></td>
+</tr>
+
+<tr>
+	<td>3:00</td>
+	<td>Yann Lecun  
+	<em>Unsupervised Learning (TBA)</em></td>
+
+</tr><tr>
+	<td>3:30</td>
+	<td>Poster Session 2</td>
+</tr>
+
+<tr>
+	<td>4:00</td>
+	<td>Coffee break 2</td>
+</tr>
+
+<tr>
+	<td>4:30</td>
+	<td>Neil Lawrence  
+	<em>The Mechanistic Fallacy and Modelling how we Think</em></td>
+</tr>
+
+<tr>
+	<td>5:00</td>
+	<td>Panel:  <em>Deep Learning and neuroscience:  What can brains tell us about massive computing and vice versa?</em><br>
+	Tentative line-up: Yoshua Bengio, Matthias Bethge, Yann Lecun, Konrad Kording, Neil Lawrence</td>
+</tr>
+
+<tr>
+	<td>6:00</td>
+	<td>Wrap up</td>
+</tr>
+
+</tbody></table
+<br>
+
+<table class="schedTable">
+<tbody><tr>
+<th>Time</th>
+<th> Day 2 </th>
+</tr>
+<tr>
+	<td width="8%">8:15</td>
+	<td width="92%">Opening remarks and welcome</td>
+</tr>
+
+<tr>
+	<td>8:30</td>
+	<td>Surya Ganguli  
+	<em>Towards a theory of high dimensional, single trial neural data analysis: On the role of random projections and phase transitions</em></td>
+</tr>
+
+<tr>
+	<td>9:00</td> <td>Katherine Heller   
+<em>Translating between human and animal studies via Bayesian multi-task learning
+</em></td>
+</tr>
+
+<tr>
+	<td>9:30</td>
+	<td>Dmitri (Mitya) Chklovskii  
+	<em>Similarity matching: A new theory of neural computation</em></td>
+</tr>
+
+<tr>
+	<td>10:00</td>
+	<td>Coffee break 1</td>
+</tr>
+
+<tr>
+	<td>10:30</td>
+	<td>Poster Session 1</td>
+</tr>
+<tr>
+	<td>11:00</td>
+	<td>Matthias Bethge  
+	<em>Let's compete—benchmarking models in neuroscience</em></td>
+</tr>
+
+<tr>
+	<td>11:30</td>
+	<td>Yoshua Bengio  
+	<em>Small Steps Towards Biologically Plausible Deep Learning</em></td>
+</tr>
+
+<tr>
+	<td>12:00</td>
+	<td>Lunch</td>
+</tr>
+
+<tr>
+	<td>2:30 PM</td>
+	<td>Pulkit Agrawal
+<!--, Mark D. Lescroart, Dustin E. Stansbury, Jitendra Malik, & Jack L. Gallant &emsp;a-->
+	<em>The Human Visual Hierarchy is Isomorphic to the Hierarchy learned by a Deep Convolutional Neural Network Trained for Object Recognition</em></td>
+</tr>
+
+<tr>
+	<td>3:00</td>
+	<td>Yann Lecun  
+	<em>Unsupervised Learning (TBA)</em></td>
+
+</tr><tr>
+	<td>3:30</td>
+	<td>Poster Session 2</td>
+</tr>
+
+<tr>
+	<td>4:00</td>
+	<td>Coffee break 2</td>
+</tr>
+
+<tr>
+	<td>4:30</td>
+	<td>Neil Lawrence  
+	<em>The Mechanistic Fallacy and Modelling how we Think</em></td>
+</tr>
+
+<tr>
+	<td>5:00</td>
+	<td>Panel:  <em>Deep Learning and neuroscience:  What can brains tell us about massive computing and vice versa?</em><br>
+	Tentative line-up: Yoshua Bengio, Matthias Bethge, Yann Lecun, Konrad Kording, Neil Lawrence</td>
+</tr>
+
+<tr>
+	<td>6:00</td>
+	<td>Wrap up</td>
+</tr>
+
+</tbody></table
+
+
+</span>
+
+<hr style="height:1px; visibility:hidden;">
+<!-- ws:start:WikiTextHeadingRule:2:&lt;h3&gt; --><h3 id="toc1"><a name="Organizers"></a><!-- ws:end:WikiTextHeadingRule:2 --><span style="color: #333333;">Organizers</span></h3>
+<div style="float:right;">
+<img src="./NIPS 2016 Workshop_ Brains and Bits_ Neuroscience Meets Machine Learning_files/graphicalMod.jpg" alt="" style="width: 160px; position: relative; left:34px; top:65px">
+</div>
+<ul>
+
+<li><span style="color: #333333; font-size: 110%;">
+<a href="http://evadyer.github.io/">Eva Dyer</a>&nbsp;
+Northwestern University
+</span></li>
+<li><span style="color: #333333; font-size: 110%;">
+<a href="http://www.stat.ucla.edu/~akfletcher/">Allie Fletcher</a>&nbsp;
+Statistics, UCLA &amp; UCB Redwood Center for Neuroscience
+</span></li>
+<li><span style="color: #333333; font-size: 110%;">
+<a href="http://koerding.com//">Konrad Kording</a>&nbsp;
+Rehabilitation Inst of Chicago, Northwestern University
+</span></li>
+<li><span style="color: #333333; font-size: 110%;">
+<a href="http://www.sohldickstein.com/">Jascha Sohl-Dickstein</a>&nbsp;
+Google Research
+</span></li>
+<li><span style="color: #333333; font-size: 110%;">
+<a href="http://jovo.me/">Joshua Vogelstein</a>&nbsp;
+Biomedical Engineering, Johns Hopkins University
+</span></li>
+<li><span style="color: #333333; font-size: 110%;">
+<a href="http://www.mackelab.org/">Jakob Macke</a>&nbsp;caesar Bonn, an Institute of the Max Planck Society
+</span></li></ul>
+<br>
+<!--
+  <img src=" http://www.soe.ucsc.edu/~afletcher/Images/graphicalMod.jpg" alt=""
+  style="left: 750px; position: absolute; top: 1150px; width: 200px; " />
+-->
+
+<!--
+<img src=" http://www.soe.ucsc.edu/~afletcher/Images/graphicalMod.jpg" alt=""
+  style="width: 200px; " /> -->
+<br>
+
+
+</span><br>
+
+<h3 id="toc1"><a name="Submission"></a><span style="color: #333333;">Accepted Talks</span></h3>
+<ul>
+  <li><em><a href="https://arxiv.org/abs/1609.09059">Training recurrent networks to generate hypotheses about how the brain solves hard navigation problems</a></em>
+    <blockquote>Ingmar Kanitscheider*, Ila Fiete, University of Texas at Austin</blockquote></li>
+
+<li><em><a href="https://arxiv.org/pdf/1608.06315v1.pdf">LFADS - Latent Factor Analysis via Dynamical Systems</a></em>
+<blockquote> David Sussillo*, Google Brain</blockquote>
+
+
+</li></ul>
+<h3 id="toc1"><a name="Submission"></a><span style="color: #333333;">Accepted Posters</span></h3>
+<ul>
+<li><em>Circuits in the retina: Deep learning as a biological modeling tool</em>
+   <blockquote>Dawna Bagherian*, Taehwan Kim, Yisong Yue, Markus Meister</blockquote></li>
+<li><em>Multilayer recurrent network models of primate retinal ganglion cells</em>
+   <blockquote>Eleanor Batty*, Nora Brackbill, Josh Merel, Alexander Heitman, Alexander Sher, Alan Litke, E.J. Chichilnisky, Liam Paninski</blockquote></li>
+<li><em>Estimating Mutual Information from Average Classification Error</em>
+   <blockquote>Yuval Benjamini*, Charles Zheng</blockquote></li>
+<li><em>Efficient Randomized Filtering for Dimensionality Reduction in Electrophysiology Data</em>
+   <blockquote>Nicholas Bertrand*, Han Lun Yap, Adam Charles, Christopher Rozell</blockquote></li>
+<li><em>Modelling human probabilistic categorization with neural reinforcement learning</em>
+   <blockquote>Sander Bosch*, Katja Seeliger, Marcel van Gerven</blockquote></li>
+<li><em>Short-term Sequence Memory in Recurrent Networks</em>
+    <blockquote>Adam Charles*, Han Lun Yap, Dong Yin, Christopher Rozell</blockquote></li>
+<li><em>Unsupervised learning of manifold models for neural coding of physical transformations in the ventral visual pathway</em>
+    <blockquote>Marissa Connor*, Christopher Rozell</blockquote></li>
+<li><em>Multi-view techniques for the joint electrophysiological and morphological classification of neuronal cell types</em>
+    <blockquote>Ellese Cotterill*, Stephen Eglen</blockquote></li>
+<li><em>Predicting the consequence of action in digital control state spaces</em>
+    <blockquote>Emmanuel Daucé*</blockquote></li>
+<li><em>Computational Geometry for Population Density Techniques: a Bridge Between Individual Neurons and Imaging Techniques?</em>
+    <blockquote>Marc De Kamps*, Yi Ming Lai</blockquote></li>
+<li><em>Efficient inference for temporal dependencies and low-rank structure in spatiotemporal receptive fields</em>
+    <blockquote>Lea Duncker*, Sneha Ravi, Greg Field, Jonathan Pillow</blockquote></li>
+<li><em>Interplay between off-line replay and plasticity in memory consolidation</em>
+    <blockquote>Nathalie Dupuy*, Mark van Rossum</blockquote></li>
+<li><em>Discovery of Salient Low-Dimensional Dynamical Structure in Neuronal Population Activity Using Hopfield Networks</em>
+    <blockquote>Felix Effenberger*, Christopher Hillar</blockquote></li>
+<li><em>Neural Simpletrons – Minimalistic Directed Generative Networks for Learning with Few Labels</em>
+  <blockquote>Dennis Forster*, Abdul-Saboor Sheikh, Joerg Luecke</blockquote></li>
+<li><em>Analysis of Motor Imagery Signals by Recurrent Neural Network</em>
+    <blockquote>Hiroyasu Fukutomi, Takeshi Higuchi, Hideo Mukai*</blockquote></li>
+<li><em>Modern machine learning tools for neural decoding of movement</em>
+<blockquote> Joshua Glaser*, Konrad Kording </blockquote>
+</li><li><em>Large-Scale Noisy-OR Networks as Models for Inference and Learning in Neurosensory Systems</em>
+    <blockquote>Enrico Guiraud*, Joerg Bornschein, Joerg Luecke</blockquote></li>
+<li><em>A forward model at Purkinje cell synapses facilitates cerebellar anticipatory control</em>
+    <blockquote>Ivan Herreros-Alonso*, Xerxes Arsiwalla, Paul Verschure</blockquote></li>
+<li><em>Automatic cell identification in hard X-ray tomograms of human brain tissue</em>
+      <blockquote>Simone Hieber*</blockquote></li>
+<li><em>Implementation of Faster P300 EEG Spelling System by Online Learning</em>
+   <blockquote> Takeshi Higuchi, Hiroyasu Fukutomi, Hideo Mukai* </blockquote>
+   </li><li><em>Recurrent Neural Networks for Spatiotemporal Dynamics of Intrinsic Networks from fMRI Data</em>
+     <blockquote>Devon Hjelm*, Vince Calhoun-Jr, Sergey Plis</blockquote></li>
+<li><em>Neuromodulator-based learning in biological and artificial neural networks</em>
+   <blockquote>Raphael Holca-Lamarre*, Klaus Obermayer, Joerg Luecke</blockquote></li>
+<li><em>Ensembles in medial and lateral orbitofrontal cortex construct cognitive maps emphasizing different features of the behavioral landscape</em>
+    <blockquote>Nina Lopatina*, Brian Sadacca, Geoffrey Schoenbaum, Michael McDannald</blockquote></li>
+<li><em>Predictive Coding Inspired Networks for Unsupervised Learning and Next Frame Prediction</em>
+   <blockquote>William Lotter*</blockquote></li>
+<li><em>Anticipatory actions: anticipated motor commands or reactions to sensory predictions?</em>
+    <blockquote>Giovanni Maffei*, Ivan Herreros, Marti Sanchez-Fibla, Paul Verschure</blockquote></li>
+    <li><em>Learning from the interaction: Closed-loop optimization of neural modulation using interactive machine learning</em>
+      <blockquote>Babak Mahmoudi*</blockquote></li>
+<li><em>Adapting magnetic interactions: from data storage towards hardware that learns</em>
+  <blockquote>Johan Mentink*, Bert Kappen, Misha Katsnelson, Alex Khajetoorians, Theo Rasing</blockquote></li>
+<li><em>Temporal Information Demultiplexing: A Novel Approach to the Analysis of Multiplexed Neural Codes</em>
+    <blockquote>Manuel Molano Mazon*, Arno Onken, Houman Safaai, Stefano Panzeri</blockquote></li>
+<li><em>Deep Learning Captures V2 Selectivity for Natural Textures</em>
+  <blockquote>Md Nasir Uddin Laskar, Luis G Sanchez Giraldo, Odelia Schwartz*</blockquote></li>
+<li><em>Using EEG Covariance Matrices and Riemannian Geometry for Detecting Respiratory Discomfort in Humans</em>
+      <blockquote>Xavier Navarro-Sune*, Anna Hudson, Fabrizio De Vico Fallani, Jacques Martinerie, Adrien Witon, Pierre Pouget,  Mathieu Raux, Thomas Similowski,  Mario Chavez</blockquote></li>
+<li><em>The effect of noise correlations on information coding by neuronal ensembles during perceptual decision-making</em>
+  <blockquote>Ramon Nogueira*</blockquote></li>
+<li><em>An olfactory system model finds sparse solutions to the linear inverse problem using the L2 norm</em>
+      <blockquote>Gonzalo Otazu*, Paul Masset, Dinu Albeanu</blockquote></li>
+<li><em>Bio-inspired unsupervised pre-training of convolutional neural networks for image classification</em>
+  <blockquote>Geoffrey Portelli*, Mélanie Ducoffe, Frédéric  Lavigne, Frédéric Precioso</blockquote></li>
+      <li><em>Generalization bound for kernel similarity learning</em>
+        <blockquote>Michael Rabadi*</blockquote></li>
+<li><em>Inter-layer relationship between CNNs and the human brain</em>
+      <blockquote>Kandan Ramakrishnan, Rajat Mani Thomas*</blockquote></li>
+<li><em>Understanding biological computation through synthetic neurophysiology</em>
+      <blockquote>Pavan Ramkumar*, Hugo Fernandes, Matthew Smith, Konrad Kording</blockquote></li>
+<li><em>A rich source of labels for deep network models of the primate dorsal visual stream</em>
+      <blockquote>Omid Rezai*, Pinar Boyraz Jentsch, Bryan Tripp</blockquote></li>
+<li><em>Recurrent computations for pattern completion</em>
+  <blockquote>Martin Schrimpf*</blockquote></li>
+<li><em>Decoding and encoding retinal ganglion cell responses with deep neural networks</em>
+        <blockquote>David Schwab*, Stephanie Palmer, Thierry Mora, Olivier Marre</blockquote></li>
+<li><em>Reward-based training of recurrent neural networks for cognitive and value-based tasks</em>
+  <blockquote>Francis Song*, Guangyu Robert Yang, Xiao-Jing Wang </blockquote></li>
+<li><em>Towards Local Learning and MCMC Inference in Biologically Plausible Deep Generative Networks</em>
+  <blockquote>Jost Tobias Springenberg*, Katharina Wilmes, Joschka Boedecker</blockquote></li>
+<li><em>Combining Multiscale Diffusion Kernels for Learning the Structural and Functional Brain Connectivity</em>
+    <blockquote>Sriniwas Surampudi*, Shruti Naik, Avinash Sharma, Bapi Raju Surampudi, Dipanjan Roy</blockquote></li>
+<li><em>Towards end-to-end optimisation of functional image analysis pipelines</em>
+    <blockquote>Albert Vilamala*, Kristoffer Hougaard Madsen, Lars Kai Hansen</blockquote></li>
+<li><em>Unsupervised Learning of Spatio-Temporal Features from Retinal Neuronal Signals</em>
+    <blockquote>Riccardo  Volpi*</blockquote></li>
+<li><em>Canonical Polyadic Tensor Decomposition Identifies Inputs to Artificial Networks</em>
+  <blockquote>Alex Williams*</blockquote></li>
+<li> <em>Deep Learning in Multi-Layer Architectures of Dense Nuclei</em>
+<blockquote> Yonghua Yin*, Erol Gelenbe </blockquote></li>
+<li><em>CaMKII activation supports reward-based neural network optimization through Hamiltonian sampling</em>
+  <blockquote>Zhaofei Yu, David Kappel*, Robert  Legenstein, Sen Song, Feng Chen, Wolfgang Maass</blockquote></li>
+<li><em>A Searchlight Factor Model Approach for Locating Shared Information in Multi-Subject fMRI Analysis</em>
+  <blockquote>Hejia Zhang*, Po-Hsuan (Cameron) Chen, Janice Chen, Xia Zhu, Javier Turek, Ted Willke, Uri Hasson, Peter Ramadge</blockquote></li>
+<li><em>Predicting psychotic symptoms in 22q11.2 deletion syndrome based on resting-state BOLD variability features extracted by PLS correlation.</em>
+  <blockquote>Daniela Zöller*, Marie Schaer, Elisa Scariati, Maria Carmela Padula, Stephan Eliez, Dimitri Van De Ville</blockquote></li>
+
+  <noscript>
+    &amp;amp;amp;lt;h2&amp;amp;amp;gt;Javascript Required&amp;amp;amp;lt;/h2&amp;amp;amp;gt;
+    &amp;amp;amp;lt;p&amp;amp;amp;gt;You need to enable Javascript in your browser to edit pages.&amp;amp;amp;lt;/p&amp;amp;amp;gt;
+  </noscript>
+
+
+  <div id="plainTextEditor" style="position:relative;display:none" class="editorLayer">
+    <textarea id="textEditor" class="autogrow" style="height: 436px;"></textarea>
+    <p style="clear:both;" align="right"><a href="http://help.wikispaces.com/help.wikitext" class="WikispacesHelpLink" data-help="help.wikitext">help on how to format text</a></p>
+  </div>
+</ul></div>
+
+
+
+  </div>
+  <div class="commentColumn WikispacesContent WikispacesBs WikispacesStream"></div>
+</div>
+
+</div></div><div id="sentinel" style="clear:both"></div>  </div>
+</div> <!--end wikiBody -->
+
+<div id="footer">
+
+  <div class="WikiFooterNav WikiElement">
+</div>
+<br>
+<br>
+<br>
+<br>
+</div> <!--end wrapper -->
+</div><u> <!--end outerWrapper -->
+<!-- w2 147 mem:4:37(30) wki:1:3(2) tot:147:147(1) -->
+
+
+
+
+</u></div><div style="position: absolute; top: -10000px; left: -10000px; width: 100px; font-size: 13.3333330154419px; font-family: monospace; line-height: normal; resize: none;"></div>
+<div style="position: absolute; top: -10000px; left: -10000px; width: 100px; font-size: 11px; font-family: BlinkMacSystemFont; line-height: normal; resize: none;"></div>
+<div style="position: absolute; top: -10000px; left: -10000px; width: 100px; font-size: 13.3333px; font-family: monospace; line-height: normal; resize: none;"></div></body></html>
